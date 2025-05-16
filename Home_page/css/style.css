@@ -1,0 +1,253 @@
+
+    /*This CSS file styles the navigation bar and the hamburger menu for a responsive design.
+    //It includes styles for both desktop and mobile views, ensuring a seamless user experience.
+    
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #00bcd4;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        transform: translateX(100%); /* Hide off-screen by default */
+        /*transition: transform 0.3s ease-in-out;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Slide in when active */
+    /*}
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}*/
+
+/* General styles for the body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Sets a clean, sans-serif font */
+}
+
+/* Styles for the navigation bar */
+.navbar {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    color: white; /* White text color */
+}
+
+/* Logo styles */
+.navbar .logo {
+    font-size: 1.5em; /* Larger font size for the logo */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Navigation links container */
+.navbar .nav-links {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Horizontal layout for links */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Individual list items */
+.navbar .nav-links li {
+    display: inline; /* Inline layout for list items */
+}
+
+/* Styles for navigation links */
+.navbar .nav-links a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* White text color */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for navigation links */
+.navbar .nav-links a:hover {
+    color: #00bcd4; /* Changes color to light blue on hover */
+}
+
+/* Hamburger menu styles (hidden by default) */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column; /* Stacks the bars vertically */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Individual bars in the hamburger menu */
+.hamburger span {
+    background: white; /* White bars */
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    margin: 3px 0; /* Space between bars */
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Navigation links container for mobile */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stacks links vertically */
+        position: absolute; /* Positioned relative to the navbar */
+        top: 60px; /* Below the navbar */
+        right: 0; /* Aligns to the right */
+        background-color: #333; /* Matches navbar background */
+        width: 200px; /* Fixed width for the menu */
+        border-radius: 5px; /* Rounded corners */
+        z-index: 1000; /* Ensures it appears above other elements */
+    }
+
+    /* Active state for the navigation links */
+    .nav-links.active {
+        display: flex; /* Makes the menu visible */
+    }
+
+    /* Show the hamburger menu on smaller screens */
+    .hamburger {
+        display: flex; /* Makes the hamburger visible */
+    }
+}
+
+.t1 {
+color: rgb(17, 13, 7);
+font-size: 20px;
+font-weight: bold;
+text-align: center;
+padding: 20px;
+background-color: #7a7979; /* Light background for the text */
+border-radius: 5px; /* Rounded corners for the text box */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+box-sizing: border-box;
+width: 100%; /* Full width for the text box */
+height: 600; /* auto height for the text box */
+overflow: auto; /* Scrollable if content overflows */
+/* Flexbox properties for centering */
+/*display: flex; /* Enables Flexbox */
+justify-content: center; /* Centers content horizontally */
+align-items: center; /* Centers content vertically */
+
+}
+.t1 p {
+    margin: 10px 0; /* Removes default margin from paragraphs */
+    padding: 10px; /* Padding for paragraphs */
+    text-align: center; /* Centers text in paragraphs */
+    font-size: 16px; /* Font size for paragraphs */
+    color: #333; /* Dark text color for readability */
+}
+.t1 h1 {
+    padding: 10px; /* Padding for headings */
+    margin: 0; /* Removes default margin from headings */
+    margin-bottom: 10px; /* Space below headings */
+    padding: 10px; /* Padding for headings */
+    text-align: center; /* Centers text in headings */
+    font-size: 50px; /* Font size for headings */
+    color: #333; /* Dark text color for readability */
+}
+.t1 .btn{
+    background-color: #333535; /* Light blue background for buttons */
+    color: white; /* White text color for buttons */
+    padding: 10px 20px; /* Padding for buttons */
+    border: none; /* Removes default border */
+    margin: 20px auto;
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    display: inline-block; /* Allows margin auto to center the button */
+}
+
+.t1 .btn:hover {
+    background-color: #00bcd4; /* Changes to light blue on hover */
+    color: rgb(44, 43, 43); /* Keeps text color white on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds shadow on hover for depth */
+}
+.t1 .btn:active {
+    background-color: #00bcd4; /* Keeps light blue on click */
+    color: rgb(44, 43, 43); /* Keeps text color white on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Keeps shadow on click for depth */
+}
+.t1 img{
+    width: 80%; 
+    max-width: 600px; /* Maximum width for images */
+    margin: 20px 0; /* Space above and below images */;
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s; /* Smooth scaling effect on hover */
+}
+.t1 .img_1 {
+    width: 60%; /* Full width for images */
+    height: 800px; /* Maintains aspect ratio */
+    border-radius: 1px; /* Rounded corners for images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: -10px; /* Space below images */
+    margin-top: 60px; /* Space above images */
+}
+.t1 .caption {
+    font-size: 14px; /* Smaller font size for the caption */
+    color: #666; /* Light gray text color */
+    margin-top: 10px; /* Space above the caption */
+    font-style: italic; /* Italicize the caption */
+}

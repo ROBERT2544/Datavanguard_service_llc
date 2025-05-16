@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses</title>
+  <link rel="stylesheet" href="css/courses.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+   <!--navigation section-->
+   <nav class="navbar">
+    <div class="logo">DataVanguard</div>
+    <ul class="nav-links">
+        <li><a href="C:\Users\user\datavangaurd\Home_page\index.html">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li class="dropdown">
+            <a href="#company">Company <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#news">News</a></li>
+                <li><a href="#success-stories">Success Stories</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </li>
+        <li><a href="#contact">Contact us</a></li>
+        <li><a href="#register">Register</a></li>
+    </ul>
+    <div class="nav-actions">
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <input type="text" class="search-input" placeholder="Search..." />
+        </div>
+        <div class="phone-number">
+            <i class="fa fa-phone"></i> +254 702498837
+        </div>
+        <button class="btn contact-btn">Contact Us</button>
+    </div>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+<!-- earch icon functionality -->
+<script>
+// Select the search icon and input field
+const searchIcon = document.querySelector('.search-icon');
+const searchInput = document.querySelector('.search-input');
+
+// Add a click event listener to the search icon
+searchIcon.addEventListener('click', () => {
+    // Toggle the 'active' class on the search input
+    searchInput.classList.toggle('active');
+    searchInput.focus(); // Focus on the input when it appears
+});
+
+// Add a keypress event listener to the search input
+searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchInput.value.toLowerCase();
+        if (query) {
+            // Search for the query in the website content
+            const bodyText = document.body.innerText.toLowerCase();
+            if (bodyText.includes(query)) {
+                alert(`The word "${query}" was found on this page.`);
+            } else {
+                alert(`The word "${query}" was not found on this page.`);
+            }
+        }
+    }
+});
+</script>
+<!-- humburger -->
+<script>
+    // Select the hamburger and nav-links elements
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Add a click event listener to the hamburger
+    hamburger.addEventListener('click', () => {
+        // Toggle the 'active' class on nav-links
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Reach new heights</h1>
+      <p>Start your online course with us today!</p>
+      <p><strong>Skills and lessons to inspire! Your first step to the career starts here. Time to start a course.</strong></p>
+    </div>
+    <div class="hero-image">
+      <img src="images/banner_default.svg" alt="Hero" />
+    </div>
+  </section>
+
+  <section class="course-container">
+    <div class="top-bar">
+      <select>
+        <option>All courses</option>
+      </select>
+      <input type="text" placeholder="Search courses..." />
+    </div>
+
+    <div class="courses-section">
+      <h3>Most popular courses <span><a href="#">View all</a></span></h3>
+      <div class="course-grid">
+        <!-- Course Cards -->
+        <div class="course-card">
+          <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+          <h4>Tableau</h4>
+          <p>Master visual data. From Basic to Advanced. Create real dashboards.</p>
+          <div class="tags">
+            <span class="tag beginner">Beginner</span>
+            <span class="tag advanced">Advanced</span>
+            <span class="tag freelance">Freelancer</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <img src="https://cdn.worldvectorlogo.com/logos/sql-1.svg" alt="SQL">
+          <h4>SQL</h4>
+          <p>Write and join SQL like an expert. Hands-on real world data.</p>
+          <div class="tags">
+            <span class="tag beginner">Beginner</span>
+            <span class="tag freelance">Freelancer</span>
+          </div>
+        </div>
+        <div class="course-card">
+          <img src="https://cdn.worldvectorlogo.com/logos/microsoft-power-bi-1.svg" alt="Power BI">
+          <h4>Power BI</h4>
+          <p>Learn Power BI, get powerful with BI dashboards & reports in no time.</p>
+          <div class="tags">
+            <span class="tag beginner">Beginner</span>
+            <span class="tag advanced">Advanced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="courses-section">
+      <h3>Newest courses <span><a href="#">View all</a></span></h3>
+      <div class="course-grid">
+        <!-- Repeat courses or add new -->
+        <!-- You can duplicate course cards here or fetch dynamically -->
+      </div>
+    </div>
+
+    <div class="leaderboard">
+      <h3>Leaderboard</h3>
+      <p>No leaderboard currently ☹</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Company</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow us</h4>
+      <ul class="social-links">
+        <li><i class="fab fa-facebook"></i> Facebook</li>
+        <li><i class="fab fa-twitter"></i> twitter</li>
+        <li><i class="fab fa-linkedin"></i> Linkedin</li>
+        <li><i class="fab fa-instagram"></i> Instagram</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Get in touch</h4>
+      <p><i class="fas fa-envelope"></i> dnashanalytics@outlook.com</p>
+      <p><i class="fas fa-phone"></i> +254 702498837</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Address</h4>
+      <p>00100 Nairobi</p>
+
+      <div class="progress-box">
+        <div class="progress-bar">
+          <div class="progress" id="progress" style="width: 99%"></div>
+          <span class="progress-text">Gain all</span>
+          <span class="progress-percent">99%</span>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-info-circle"></i>
+          <p class="inf">We train you Earn. You will earn a full package that will have you continue earning for life time</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©DataVanguard Service LLC</p>
+  </div>
+</footer>
+<script>
+// Animate progress bar on load
+window.addEventListener('DOMContentLoaded', () => {
+  const progress = document.getElementById('progress');
+  progress.style.width = '99%';
+});
+</script>
+</body>
+</html>

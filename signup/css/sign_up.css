@@ -1,0 +1,374 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the navigation bar */
+.navbar {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    background-color: #eee8e8; /* Dark background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    color: rgb(20, 19, 19); /* White text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+}
+
+/* Logo styles */
+.navbar .logo {
+    font-size: 1.5em; /* Larger font size for the logo */
+    font-weight: bold; /* Bold text for emphasis */
+    color:black;
+}
+
+/* Navigation links container */
+.navbar .nav-links {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Horizontal layout for links */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Individual list items */
+.navbar .nav-links li {
+    display: inline; /* Inline layout for list items */
+}
+
+/* Styles for navigation links */
+.navbar .nav-links a {
+    text-decoration: none; /* Removes underline from links */
+    color: rgb(8, 8, 8); /* White text color */
+    font-size: 14px; /* Font size for links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for navigation links */
+.navbar .nav-links a:hover {
+    color: #00bcd4; /* Changes color to light blue on hover */
+}
+.navbar .nav-actions {
+    display: flex; /* Flexbox for layout */
+    gap: 20px; /* Space between action buttons */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar .search-icon{
+    font-size: 18px; /* Font size for the search icon */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    color: black; /* Color for the search icon */
+}
+
+.navbar .phone-number{
+    font-size: 14px; /* Font size for the phone number */
+    color: black; /* Color for the phone number */
+    text-decoration: none; /* Removes underline from the link */
+    display:flex;
+    align-items:centre;
+    gap: 5px; /* Space between icon and text */
+}
+.navbar .btn.contact-btn {
+    background-color: #333; /* Dark background */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar .btn.contact-btn:hover {
+    background-color: #00bcd4; /* Light blue on hover */
+}
+
+/* Search container styles */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    display: none; /* Hidden by default */
+    width: 200px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input.active {
+    display: block; /* Show input when active */
+}
+/* Dropdown styles */
+.nav-links .dropdown {
+    position: relative; /* Position relative for dropdown menu */
+}
+
+.nav-links .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between text and caret icon */
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px; /* Ensure consistent width */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-links .dropdown-menu li a:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+/* Hamburger menu styles (hidden by default) */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column; /* Stacks the bars vertically */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Individual bars in the hamburger menu */
+.hamburger span {
+    background: rgb(20, 19, 19); /* White bars */
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    margin: 3px 0; /* Space between bars */
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Navigation links container for mobile */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stacks links vertically */
+        position: absolute; /* Positioned relative to the navbar */
+        top: 60px; /* Below the navbar */
+        right: 0; /* Aligns to the right */
+        background-color: #333; /* Matches navbar background */
+        width: 200px; /* Fixed width for the menu */
+        border-radius: 5px; /* Rounded corners */
+        z-index: 1000; /* Ensures it appears above other elements */
+    }
+
+    /* Active state for the navigation links */
+    .nav-links.active {
+        display: flex; /* Makes the menu visible */
+    }
+
+    /* Show the hamburger menu on smaller screens */
+    .hamburger {
+        display: flex; /* Makes the hamburger visible */
+    }
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.optional {
+    font-weight: normal;
+    color: #888;
+}
+
+/*footer*/
+.footer {
+    background-color: #212222;
+    padding: 40px 20px 10px;
+    height: 30%;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    background-color: #333;
+    /*height: 100%;*/
+    
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #fff;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .footer-section ul li,
+  .footer-section p {
+    margin: 8px 0;
+    font-size: 14px;
+    color:#e5e8e9
+  }
+  
+  .footer-section ul li i {
+    margin-right: 8px;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: rgb(235, 232, 232);
+    padding-left: 30px;
+  }
+  
+  .progress-box {
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    background: #2c3e3d;
+    border-radius: 5px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background: linear-gradient(to right, #0eaa36, #1e6e1e);
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+  
+  .progress-text {
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .progress-percent {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .info-box {
+    background: #d0f0f3;
+    color: #00353a;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    
+  }
+  
+  .info-box i {
+    margin-top: 3px;
+    color: #0a5961;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .info-box .inf{
+    color: #0b0c0c;
+  }

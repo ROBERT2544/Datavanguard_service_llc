@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVanguard Services LLC</title>
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!--navigation section-->
+    <nav class="navbar">
+        <div class="logo">DataVanguard</div>
+        <ul class="nav-links">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="C:\Users\user\datavangaurd\courses\courses.html">Courses</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li class="dropdown">
+                <a href="#company">Company <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#success-stories">Success Stories</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="search-container">
+                <div class="search-icon">
+                    <i class="fa fa-search"></i>
+                </div>
+                <input type="text" class="search-input" placeholder="Search..." />
+            </div>
+            <div class="phone-number">
+                <i class="fa fa-phone"></i> +254 702498837
+            </div>
+            <button class="btn contact-btn">Contact Us</button>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+<!-- earch icon functionality -->
+<script>
+    // Select the search icon and input field
+    const searchIcon = document.querySelector('.search-icon');
+    const searchInput = document.querySelector('.search-input');
+
+    // Add a click event listener to the search icon
+    searchIcon.addEventListener('click', () => {
+        // Toggle the 'active' class on the search input
+        searchInput.classList.toggle('active');
+        searchInput.focus(); // Focus on the input when it appears
+    });
+
+    // Add a keypress event listener to the search input
+    searchInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            const query = searchInput.value.toLowerCase();
+            if (query) {
+                // Search for the query in the website content
+                const bodyText = document.body.innerText.toLowerCase();
+                if (bodyText.includes(query)) {
+                    alert(`The word "${query}" was found on this page.`);
+                } else {
+                    alert(`The word "${query}" was not found on this page.`);
+                }
+            }
+        }
+    });
+</script>
+    <!-- humburger -->
+    <script>
+        // Select the hamburger and nav-links elements
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+    
+        // Add a click event listener to the hamburger
+        hamburger.addEventListener('click', () => {
+            // Toggle the 'active' class on nav-links
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+<div class="t1">
+    <h1>Empowering Tomorrow's <br> Leaders</h1>
+    <p>Inspire learners with high-quality online education and interactive experiences that foster creativity, exploration, and academic success.</p>
+    <button class="btn"><a href="C:\Users\user\datavangaurd\signup\sign_up.html">Sign Up Now</a></button>
+    <img src="images/home_2.jpg" alt="data" class="img_1">
+    <p class="caption">Where education meets dedication – a hallmark of excellence in online learning.</p>
+</div>
+
+<!--staff section-->
+<div class="staff-section">
+    <h2>Discover our dedicated staff</h2>
+    <div class="staff-container">
+        <div class="staff-card">
+            <img src="images/staffs/ren.JPG" alt="Jack Agyeman">
+            <p class="staff-name">Jack Agyeman</p>
+            <p class="staff-role">CEO</p>
+        </div>
+        <div class="staff-card">
+            <img src="images/staffs/ren.JPG" alt="Nana Serwaa">
+            <p class="staff-name">Nana Serwaa</p>
+            <p class="staff-role">HR and Business Service Director</p>
+        </div>
+        <div class="staff-card">
+            <img src="images/staffs/ren.JPG" alt="Robert Danso">
+            <p class="staff-name">Robert Danso</p>
+            <p class="staff-role">Faculty Head of IT</p>
+        </div>
+        <div class="staff-card">
+            <img src="images/staffs/ren.JPG" alt="Fredrick Madons">
+            <p class="staff-name">Fredrick Madons</p>
+            <p class="staff-role">IT Officer</p>
+        </div>
+        <div class="staff-card">
+            <img src="images/staffs/ren.JPG" alt="Jemima Aura">
+            <p class="staff-name">Jemima Aura</p>
+            <p class="staff-role">Trainer</p>
+        </div>
+    </div>
+    <h3>Inspire future leaders</h3>
+    <div class="courses-section">
+        <div class="course-card">
+            <img src="images/home_1.jpg" alt="Courses">
+            <div class="course-content">
+                <h3>Courses</h3>
+                <p>Are you looking for an online platform where innovative courses are offered, in a constantly evolving environment? Look no further!</p>
+                <button class="btn">Learn More</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="images/image_5.jpg" alt="The online platform">
+            <div class="course-content">
+                <h3>The online platform</h3>
+                <p>Our virtual campus is accessible from anywhere, allowing you to learn at your own pace and convenience. Join us online and connect with peers globally.</p>
+                <button class="btn">Learn More</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="class-cohort-section">
+    <h2>Time to next Class Cohort</h2>
+    <div class="countdown-timer">
+        <div class="timer-item">
+            <span id="days">0</span>
+            <p>Days</p>
+        </div>
+        <div class="timer-item">
+            <span id="hours">0</span>
+            <p>Hours</p>
+        </div>
+        <div class="timer-item">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+        </div>
+        <div class="timer-item">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+        </div>
+    </div>
+</div>
+-->
+<div class="class-cohort-section">
+    <h2>Time to next Class Cohort</h2>
+    <div class="countdown-timer">
+        <div class="timer-item">
+            <div class="circle">
+                <span id="days">0</span>
+            </div>
+            <p>Days</p>
+        </div>
+        <div class="timer-item">
+            <div class="circle">
+                <span id="hours">0</span>
+            </div>
+            <p>Hours</p>
+        </div>
+        <div class="timer-item">
+            <div class="circle">
+                <span id="minutes">0</span>
+            </div>
+            <p>Minutes</p>
+        </div>
+        <div class="timer-item">
+            <div class="circle">
+                <span id="seconds">0</span>
+            </div>
+            <p>Seconds</p>
+        </div>
+    </div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-container">
+        <div class="faq-left">
+            <h2>Common inquiries</h2>
+            <p>Here are some frequently asked questions about our online classes.</p>
+        </div>
+        <div class="faq-right">
+            <div class="faq-item">
+                <button class="faq-question">What courses does your platform offer?</button>
+                <div class="faq-answer">
+                    <p>We offer a wide range of courses, from technology to business and personal development.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I reach out to our support team?</button>
+                <div class="faq-answer">
+                    <p>You can contact our support team via email or live chat on our platform.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is your satisfaction guarantee?</button>
+                <div class="faq-answer">
+                    <p>We offer a 30-day satisfaction guarantee for all courses. Participants must complete the course in its original format and include proof of enrollment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<script>
+    // Countdown Timer
+    const targetDate = new Date("2025-06-01T00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.querySelector(".countdown-timer").textContent = "Class Cohort has started!";
+        }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+    });
+</script>
+-->
+<!-- countdown -->
+<script>
+    // Countdown Timer
+    const targetDate = new Date("2025-06-01T00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const totalDays = 30; // Example total days for progress calculation
+        const totalHours = 24;
+        const totalMinutes = 60;
+        const totalSeconds = 60;
+
+        // Update text content
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        // Update progress circles
+        document.querySelector(".circle:nth-child(1)").style.background = `conic-gradient(#00bcd4 ${(days / totalDays) * 100}%, #ddd 0%)`;
+        document.querySelector(".circle:nth-child(2)").style.background = `conic-gradient(#00bcd4 ${(hours / totalHours) * 100}%, #ddd 0%)`;
+        document.querySelector(".circle:nth-child(3)").style.background = `conic-gradient(#00bcd4 ${(minutes / totalMinutes) * 100}%, #ddd 0%)`;
+        document.querySelector(".circle:nth-child(4)").style.background = `conic-gradient(#00bcd4 ${(seconds / totalSeconds) * 100}%, #ddd 0%)`;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.querySelector(".countdown-timer").textContent = "Class Cohort has started!";
+        }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+</script>
+
+<div class="achievements-section">
+    <div class="achievements-container">
+        <div class="achievement-image">
+            <img src="images/image_7.jpg" alt="Book and Laptop">
+        </div>
+        <div class="achievement-card">
+            <h3>Key Achievement</h3>
+            <p>Achieving new milestones</p>
+        </div>
+        <div class="achievement-card">
+            <h3>Wider Reach</h3>
+            <p>Transforming lives through education</p>
+        </div>
+        <div class="achievement-card dark-card">
+            <h3>Innovation Center</h3>
+            <p>Where learning meets innovation</p>
+        </div>
+        <div class="achievement-card">
+            <h3>Community Engagement</h3>
+            <p>Fostering community</p>
+        </div>
+    </div>
+</div>
+</body>
+<footer class="footer">
+  <div class="footer-top">
+    <h2>Join us in shaping the future of education</h2>
+    <button class="btn">Get Started</button>
+  </div>
+
+  
+<div class="footer-container">
+
+    <div class="footer-section">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Company</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow us</h4>
+      <ul class="social-links">
+        <li><i class="fab fa-facebook"></i> Facebook</li>
+        <li><i class="fab fa-twitter"></i> twitter</li>
+        <li><i class="fab fa-linkedin"></i> Linkedin</li>
+        <li><i class="fab fa-instagram"></i> Instagram</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Get in touch</h4>
+      <p><i class="fas fa-envelope"></i> dnashanalytics@outlook.com</p>
+      <p><i class="fas fa-phone"></i> +254 702498837</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Address</h4>
+      <p>00100 Nairobi</p>
+
+      <div class="progress-box">
+        <div class="progress-bar">
+          <div class="progress" id="progress" style="width: 99%"></div>
+          <span class="progress-text">Gain all</span>
+          <span class="progress-percent">99%</span>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-info-circle"></i>
+          <p class="inf">We train you Earn. You will earn a full package that will have you continue earning for life time</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©DataVanguard Service LLC</p>
+  </div>
+</footer>
+<script>
+// Animate progress bar on load
+window.addEventListener('DOMContentLoaded', () => {
+  const progress = document.getElementById('progress');
+  progress.style.width = '99%';
+});
+</script>
+
+
+</html>
