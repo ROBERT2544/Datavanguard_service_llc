@@ -5,15 +5,602 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DataVanguard Services LLC</title>
-        <link rel="stylesheet" href="Services/css/style.css">
-        <link rel="stylesheet" href="Home_page/css/style2.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="C:\Users\user\datavangaurd\Services\css\style.css">
+        
+        <link rel="stylesheet" href="C:\Users\user\datavangaurd\Home_page\css\style2.css">
        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">       
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     </head>
     <body>
+      <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Sets a clean, sans-serif font */
+}
+
+/* Styles for the navigation bar */
+.navbar {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    background-color: #eee8e8; /* Dark background color */
+    padding: 10px 20px; /* Padding around the navbar */
+    color: rgb(20, 19, 19); /* White text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif;
+}
+
+/* Logo styles */
+.navbar .logo {
+    font-size: 1.5em; /* Larger font size for the logo */
+    font-weight: bold; /* Bold text for emphasis */
+    color:black;
+}
+
+/* Navigation links container */
+.navbar .nav-links {
+    list-style: none; /* Removes default list styling */
+    display: flex; /* Horizontal layout for links */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Individual list items */
+.navbar .nav-links li {
+    display: inline; /* Inline layout for list items */
+}
+
+/* Styles for navigation links */
+.navbar .nav-links a {
+    text-decoration: none; /* Removes underline from links */
+    color: rgb(8, 8, 8); /* White text color */
+    font-size: 14px; /* Font size for links */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+/* Hover effect for navigation links */
+.navbar .nav-links a:hover {
+    color: #00bcd4; /* Changes color to light blue on hover */
+}
+.navbar .nav-actions {
+    display: flex; /* Flexbox for layout */
+    gap: 20px; /* Space between action buttons */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar .search-icon{
+    font-size: 18px; /* Font size for the search icon */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    color: black; /* Color for the search icon */
+}
+
+.navbar .phone-number{
+    font-size: 14px; /* Font size for the phone number */
+    color: black; /* Color for the phone number */
+    text-decoration: none; /* Removes underline from the link */
+    display:flex;
+    align-items:centre;
+    gap: 5px; /* Space between icon and text */
+}
+.navbar .btn.contact-btn {
+    background-color: #333; /* Dark background */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar .btn.contact-btn:hover {
+    background-color: #00bcd4; /* Light blue on hover */
+}
+
+/* Search container styles */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    display: none; /* Hidden by default */
+    width: 200px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input.active {
+    display: block; /* Show input when active */
+}
+/* Dropdown styles */
+.nav-links .dropdown {
+    position: relative; /* Position relative for dropdown menu */
+}
+
+.nav-links .dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between text and caret icon */
+}
+
+.nav-links .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent link */
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px;
+    z-index: 1000;
+    min-width: 150px; /* Ensure consistent width */
+}
+
+.nav-links .dropdown-menu li {
+    padding: 5px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-links .dropdown-menu li a:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+/* Hamburger menu styles (hidden by default) */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    flex-direction: column; /* Stacks the bars vertically */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Individual bars in the hamburger menu */
+.hamburger span {
+    background: rgb(20, 19, 19); /* White bars */
+    height: 3px; /* Height of each bar */
+    width: 25px; /* Width of each bar */
+    margin: 3px 0; /* Space between bars */
+}
+
+/* Responsive styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Navigation links container for mobile */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stacks links vertically */
+        position: absolute; /* Positioned relative to the navbar */
+        top: 60px; /* Below the navbar */
+        right: 0; /* Aligns to the right */
+        background-color: #333; /* Matches navbar background */
+        width: 200px; /* Fixed width for the menu */
+        border-radius: 5px; /* Rounded corners */
+        z-index: 1000; /* Ensures it appears above other elements */
+    }
+
+    /* Active state for the navigation links */
+    .nav-links.active {
+        display: flex; /* Makes the menu visible */
+    }
+
+    /* Show the hamburger menu on smaller screens */
+    .hamburger {
+        display: flex; /* Makes the hamburger visible */
+    }
+}
+.t1 {
+    color: rgb(17, 13, 7);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #D3D3D4; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box;
+    width: 100%; /* Full width */
+    position: relative; /* Set relative positioning for the container */
+    overflow: hidden; /* Ensures no content spills outside the container */
+}
+
+.service_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.service_tabs_each {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Adjust width for three columns */
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service_tabs_each:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service_image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service_title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service_description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.moving_info_section {
+    position: relative;
+    overflow: hidden;
+    background: #f4f4f9;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.moving_info {
+    display: inline-block;
+    white-space: nowrap;
+    animation: moveLeft 15s linear infinite;
+}
+
+.moving_info blockquote {
+    display: inline-block;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    color: #333;
+}
+
+.moving_info blockquote footer {
+    margin-top: 15px;
+}
+
+.testimonial_author {
+    text-align: center;
+    font-size: 1em;
+    color: #666;
+}
+
+.testimonial_author strong {
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Animation for moving text */
+@keyframes moveLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+  
+  .slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    overflow: hidden;   
+    background: url('C:\Users\user\datavangaurd\Services\images\website.s_quotes_carousel_demo_image_2.jpg') no-repeat center center/cover;
+    padding: 50px 0;
+    border-radius: 10px;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 15px;
+  }
+  
+  .slide p {
+    font-size: 1.1em;
+  }
+  
+  .author {
+    margin-top: 20px;
+  }
+  
+  .author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.7);
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  
+  .nav.left {
+    left: 20px;
+  }
+  
+ 
+section .background_im .main_container{
+  background-image: url(/Services/images/website.s_quotes_carousel_demo_image_2.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+}
+
+.profile-carousel-wrapper {
+  background: url('Services\images\one-on-one Coaching.jpg') no-repeat center center/cover;
+  padding: 50px 0;
+}
+
+.profile-carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.profile-carousel {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+.profile-card p::before {
+  content: "“";
+  display: block;
+  font-size: 80px;
+  line-height: 1;
+  color: #5c3838;
+  font-family: Georgia, serif;
+  margin-bottom: 10px;
+}
+
+.profile-card {
+  background: white;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.profile-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.profile-year {
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.profile-arrow.left {
+  left: 10px;
+}
+
+.profile-arrow.right {
+  right: 10px;
+}
+/*footer*/
+.footer {
+    background-color: #212222;
+    padding: 40px 20px 10px;
+    height: 30%;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    background-color: #333;
+    /*height: 100%;*/
+    
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #fff;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .footer-section ul li,
+  .footer-section p {
+    margin: 8px 0;
+    font-size: 14px;
+    color:#e5e8e9
+  }
+  
+  .footer-section ul li i {
+    margin-right: 8px;
+  }
+  
+  .footer-section a {
+    text-decoration: none;
+    color: rgb(235, 232, 232);
+    padding-left: 30px;
+  }
+  
+  .progress-box {
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    background: #2c3e3d;
+    border-radius: 5px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background: linear-gradient(to right, #0eaa36, #1e6e1e);
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+  
+  .progress-text {
+    position: absolute;
+    left: 10px;
+    top: 3px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .progress-percent {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .info-box {
+    background: #d0f0f3;
+    color: #00353a;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    
+  }
+  
+  .info-box i {
+    margin-top: 3px;
+    color: #0a5961;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #fff;
+  }
+
+  .info-box .inf{
+    color: #0b0c0c;
+  }
+      </style>
         <!--navigation section-->
         <nav class="navbar">
             <div class="logo">DataVanguard</div>
@@ -130,31 +717,114 @@
     </div>
 
      <!-- Moving Information Section -->
-     <div class="slider-container">
-        <button class="nav left">&#10094;</button>
-        <div class="slider">
-          <div class="slide active">
-            <p>Thanks to our innovative online platform, we offer a variety of courses...</p>
-            <div class="author">
-              <img src="images/Community & Support Forum.jpg" alt="user" />
-              <p><strong>Jane Doe</strong><br>Graduated in 2019</p>
-            </div>
+     <div class="profile-carousel-wrapper">
+      <div class="profile-carousel-container">
+        <div class="profile-arrow left" onclick="profileMoveSlide(-1)">&#129172;</div>
+        <div class="profile-arrow right" onclick="profileMoveSlide(1)">&#129174;</div>
+        <div class="profile-carousel" id="profileCarousel">
+          <div class="profile-card">
+            <p>I have gained invaluable knowledge and completed projects with the guidance of experienced instructors! The support team is always available and eager to help, making me feel valued and encouraged! While it can be challenging, it's an exciting journey!.</p>
+            <img src="C:\Users\user\datavangaurd\Services\images\one-on-one Coaching.jpg" alt="Profile" class="profile-img" />
+            <div class="profile-name">Jude Agyeman</div>
+            <div class="profile-year">Graduated in 2010</div>
           </div>
-          <div class="slide">
-            <p>This platform gave me a career boost in BI and analytics!</p>
-            <div class="author">
-              <img src="images/corporate.jpg" alt="user" />
-              <p><strong>Mark Smith</strong><br>Graduated in 2020</p>
-            </div>
+          <div class="profile-card">
+            <p>At DV, we grant you a chance to excel in your choice of becoming an expert in BI solutions and consulting services! Join others when it is still early.</p>
+            <img src="C:\Users\user\datavangaurd\Services\images\one-on-one Coaching.jpg" alt="Profile" class="profile-img" />
+            <div class="profile-name">Nana Serwaa</div>
+            <div class="profile-year">Graduated in 2012</div>
           </div>
-          <!-- Repeat for 5 more testimonials -->
+          <div class="profile-card">
+            <p>Thanks to our innovative online platform, we offer a variety of courses where students are guided by a dedicated "instructor," a type of "coach"!</p>
+            <img src="C:\Users\user\datavangaurd\Services\images\one-on-one Coaching.jpg" alt="Profile" class="profile-img" />
+            <div class="profile-name">Robert Etemesi</div>
+            <div class="profile-year">Graduated in 2019</div>
+          </div>
+          <div class="profile-card">
+            <p>Exceptional support and top-notch courses! An instructor is available to guide you and can be reached through flexible hours. Everything you need to launch your online learning journey.</p>
+            <img src="C:\Users\user\datavangaurd\Services\images\one-on-one Coaching.jpg" alt="Profile" class="profile-img" />
+            <div class="profile-name">Jemimah Aura</div>
+            <div class="profile-year">Graduated: 2019</div>
+          </div>
+          <div class="profile-card">
+            <p>Ready to move you to your Top sky Limits with BI training and marketing strategies for greater heights </p>
+            <img src="C:\Users\user\datavangaurd\Services\images\one-on-one Coaching.jpg" alt="Profile" class="profile-img" />
+            <div class="profile-name">Fredrick Madara</div>
+            <div class="profile-year">Graduated in 2012</div>
+          </div>
+          
         </div>
-        <button class="nav right">&#10095;</button>
       </div>
+    </div>
+    
+    <script>
+      const profileCarousel = document.getElementById('profileCarousel');
+      const profileTotalSlides = profileCarousel.children.length;
+      let profileIndex = 0;
+    
+      function profileMoveSlide(direction) {
+        profileIndex = (profileIndex + direction + profileTotalSlides) % profileTotalSlides;
+        profileUpdateCarousel();
+      }
+    
+      function profileUpdateCarousel() {
+        const offset = -profileIndex * 100;
+        profileCarousel.style.transform = `translateX(${offset}%)`;
+      }
+    
+      setInterval(() => profileMoveSlide(1), 5000);
+    </script>
     
       <script src="jss/script.js"></script>
 
-   
+
+      <style>
+         .Affliates_program h2{
+        text-align: center;
+        font-size: 2.2em;
+        font-family: 'Times New Roman', Times, serif;
+         }
+         .Affliates_program p{
+          font-size: medium;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-align: center;
+          padding-left: 12%;
+          padding-right: 12%;
+          
+          color: rgb(82, 79, 79);
+         }
+         .Affliates_program{
+          background-color: aliceblue;
+          box-shadow: inset black;
+          padding-left: 10px;
+          padding-right: 10px;
+          align-items: center;
+          width: 100%;
+         }
+         .Affliates_program .btn_program{
+          background-color: aliceblue;
+          color: rgb(82, 79, 79);
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1.2em;
+          align-items: center;
+          align-items: center;
+          width: 100%;
+          text-underline-position: below;
+         }
+      </style>
+    <div class="Affliates_program">
+      <h2>Affiliates and testimonials</h2>
+      <p>Join our affiliate program and earn by promoting high-quality BI training courses in Power BI, Tableau, and SQL. As an affiliate, you’ll receive a commission for every student who enrolls through your unique referral link. Whether you're a content creator, blogger, or industry professional, this is a great opportunity to monetize your network while helping others gain valuable data analytics skills. Sign up today and start earning with every successful referral!
+       <br> <a href="#">See our success stories <i class="fa fa-long-arrow-right ms-2"></i></a>
+      </p>
+      
+    </div>
+
+
+
 </body>
 <footer class="footer">
     <div class="footer-top">
@@ -162,6 +832,7 @@
       <button class="btn">Get Started</button>
     </div>
   
+    
     
   <div class="footer-container">
   
