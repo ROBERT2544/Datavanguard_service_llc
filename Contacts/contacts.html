@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us -DataVanguard Service LLC</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+      background-size: cover;
+      color: #1a1a1a;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    nav {
+      background-color: #fff;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: gray;
+    }
+    .icon-btn {
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: black;
+    }
+    .icon-btn:hover {
+      color: gray;
+    }
+    .call-button, .whatsapp-button {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-btn, .signin-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      border: 1px solid gray;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-btn {
+      background: gray;
+      color: white;
+    }
+    .contact-btn:hover {
+      background: #555;
+    }
+    .signin-btn {
+      background: white;
+      color: black;
+    }
+    .signin-btn:hover {
+      background: #eee;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .form-section, .info-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode .form-section, .dark-mode .info-section {
+      background-color: #2a2a2a;
+      color: white;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+    .submit-button button {
+      background: gray;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .success-message {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #dff0d8;
+      color: #3c763d;
+      border-radius: 5px;
+    }
+    .dark-mode .success-message {
+      background-color: #2c662d;
+      color: #dff0d8;
+    }
+    .dark-toggle {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dark-mode .dark-toggle {
+      background: #333;
+      color: #fff;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .column {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 0.25rem 0;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .progress-bar {
+      background: #666;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin: 0.5rem 0;
+    }
+    .progress-bar-inner {
+      width: 99%;
+      background: #0f0;
+      text-align: center;
+      color: #000;
+      line-height: 20px;
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links, .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function submitGoogleForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+      const queryString = new URLSearchParams(data).toString();
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSc2B_GcVh7GywveHbuLRfbQOVeyW67hpOWo-SQFf0BS55v9zg/viewform?usp=sharing&ouid=106996248766874390907", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: queryString
+      });
+
+      form.reset();
+      document.getElementById("success-message").style.display = "block";
+    }
+    function downloadPDF() {
+      const element = document.body.cloneNode(true);
+      const win = window.open('', '', 'height=800,width=1000');
+      win.document.write('<html><head><title>Contact Page</title></head><body>');
+      win.document.write(element.innerHTML);
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchBtn = document.querySelector(".icon-btn");
+      searchBtn.addEventListener("click", function() {
+        const query = prompt("Search this site:");
+        if (query) window.find(query);
+      });
+
+      document.querySelector(".contact-btn").addEventListener("click", function() {
+        window.location.href = "contact.html";
+      });
+
+      document.querySelector(".signin-btn").addEventListener("click", function() {
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <nav>
+    <div class="nav-logo">
+  <a href="index.html">
+    <img src="/logos/LOGO 4.png" alt="Company Logo">
+  </a>
+</div>
+
+    <div class="nav-links">
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/">Home</a>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/courses/courses.html">Courses</a>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/Services/services.html">Services</a>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/pricing_dtv.html">Pricing</a>
+      <a href="#">Company</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="register.html">Register</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn"><i class="fas fa-search"></i></button>
+      <a href="tel:+254702498837" class="call-button"><i class="fas fa-phone"></i> Call</a>
+      <a href="https://wa.me/254702498837" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="contact-btn">Contact Us</button>
+      <button class="signin-btn">Sign In</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="form-section">
+      <h2>Contact Us</h2>
+      <form onsubmit="submitGoogleForm(event)">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="entry.123456" required>
+
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="entry.234567" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="entry.345678" required>
+
+        <label for="country">Country *</label>
+        <input type="text" id="country" name="entry.456789" required>
+
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" name="entry.567890" required>
+
+        <label for="question">Question *</label>
+        <textarea id="question" name="entry.678901" rows="4" required></textarea>
+
+        <div class="submit-button">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="success-message" class="success-message">
+        Thank you! Your question has been submitted successfully.
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>Data Vanguard Service LLC</h2>
+      <p>BI Training Company</p>
+      <p><strong>Address:</strong> 00100 Nairobi</p>
+      <p><strong>Phone:</strong> +254702498837</p>
+      <p><strong>Email:</strong> robertetemesi@gmail.com</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24175.04622495636!2d-74.0059724!3d40.7127755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259af18aa4d89%3A0x3a4f16466e88b739!2sNew%20Jersey%2C%20USA!5e0!3m2!1sen!2ske!4v1625824704354!5m2!1sen!2ske" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding: 1rem;">
+    <button onclick="downloadPDF()">PDF</button>
+  </div>
+
+  <footer>
+    <div class="column">
+      <h4>Explore</h4>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/">Home</a>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/courses/courses.html">Courses</a>
+      <a href="https://robert2544.github.io/Datavanguard_service_llc/pricing_dtv.html">Pricing</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Refund Policy</a>
+      <a href="#">Company</a>
+    </div>
+    <div class="column">
+      <h4>Follow Us</h4>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i> X</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <div class="column">
+      <h4>Get In Touch</h4>
+      <p>Email: robertetemesi@gmail.com</p>
+      <p>Phone: +254702498837</p>
+    </div>
+    <div class="column">
+      <h4>Address</h4>
+      <p>Address Code: 00100 Nairobi</p>
+      <div class="progress-bar">
+        <div class="progress-bar-inner">Gain All</div>
+      </div>
+      <p>Slogan: We train you earn</p>
+    </div>
+    <div style="width: 100%; text-align: left; margin-top: 1rem;">
+      &copy; 2025 Data Vanguard Service LLC| All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
