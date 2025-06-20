@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Team | DataVanguard Service LLC</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="/logos/android-chrome-512x512.png" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    /*   */
+     body.dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    nav {
+      background-color: #a5a2a2;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: gray;
+    }
+    .icon-btn {
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: black;
+    }
+    .icon-btn:hover {
+      color: gray;
+    }
+    .call-button, .whatsapp-button {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-btn, .signin-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      border: 1px solid gray;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-btn {
+      background: gray;
+      color: white;
+    }
+    .contact-btn:hover {
+      background: #555;
+    }
+    .signin-btn {
+      background: white;
+      color: black;
+    }
+    .signin-btn:hover {
+      background: #eee;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .form-section, .info-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode .form-section, .dark-mode .info-section {
+      background-color: #2a2a2a;
+      color: white;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+    .submit-button button {
+      background: gray;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .success-message {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #dff0d8;
+      color: #3c763d;
+      border-radius: 5px;
+    }
+    .dark-mode .success-message {
+      background-color: #2c662d;
+      color: #dff0d8;
+    }
+    .dark-toggle {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dark-mode .dark-toggle {
+      background: #333;
+      color: #fff;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .column {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 0.25rem 0;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .progress-bar {
+      background: #666;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin: 0.5rem 0;
+    }
+    .progress-bar-inner {
+      width: 99%;
+      background: #0f0;
+      text-align: center;
+      color: #000;
+      line-height: 20px;
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links, .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+    }
+    /*-------------------------------- */
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .team-member {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #003366;
+      margin-bottom: 5px;
+    }
+    .member-role {
+      font-size: 1rem;
+      font-style: italic;
+      color: #0077b5;
+      margin-bottom: 15px;
+    }
+    .portfolio {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+      min-height: 80px;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .social-links a {
+      text-decoration: none;
+      color: #0077b5;
+      font-size: 1.4rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #004974;
+    }
+    /* LinkedIn Icon SVG style */
+    .linkedin-icon {
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+    @media (max-width: 650px) {
+      .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .team-member {
+        width: 90%;
+      }
+    }
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+  </style>
+ <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function submitGoogleForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+      const queryString = new URLSearchParams(data).toString();
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSc2B_GcVh7GywveHbuLRfbQOVeyW67hpOWo-SQFf0BS55v9zg/viewform?usp=sharing&ouid=106996248766874390907", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: queryString
+      });
+
+      form.reset();
+      document.getElementById("success-message").style.display = "block";
+    }
+    function downloadPDF() {
+      const element = document.body.cloneNode(true);
+      const win = window.open('', '', 'height=800,width=1000');
+      win.document.write('<html><head><title>Contact Page</title></head><body>');
+      win.document.write(element.innerHTML);
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchBtn = document.querySelector(".icon-btn");
+      searchBtn.addEventListener("click", function() {
+        const query = prompt("Search this site:");
+        if (query) window.find(query);
+      });
+
+      document.querySelector(".contact-btn").addEventListener("click", function() {
+        window.location.href = "contact.html";
+      });
+
+      document.querySelector(".signin-btn").addEventListener("click", function() {
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <nav>
+    <div class="nav-logo">
+  <a href="index.html">
+    <img src="/logos/LOGO 4.png" alt="Company Logo">
+  </a>
+</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#">Company</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="register.html">Register</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn"><i class="fas fa-search"></i></button>
+      <a href="tel:+254702498837" class="call-button"><i class="fas fa-phone"></i> Call</a>
+      <a href="https://wa.me/254702498837" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="contact-btn">Contact Us</button>
+      <button class="signin-btn">Sign In</button>
+    </div>
+  </nav>
+
+
+  <h1>Our Team</h1>
+  <div class="team-container">
+
+    <div class="team-member">
+        <img src="C:\Users\user\datavangaurd\logos\Learn online Logos.jpg" alt="Ren">
+      <div class="member-name">Robert Etemesi</div>
+      <div class="member-role">Founder & BI Trainer/Developer</div>
+      <div class="portfolio">
+        Over 10 years of experience in Business Intelligence with expertise in SQL, Tableau, and Power BI. Passionate about helping professionals level up their BI skills and land top jobs.
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ren-profile" target="_blank" aria-label="Ren LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.5h.1c.65-1.1 2.25-2.25 4.6-2.25 4.9 0 5.8 3.2 5.8 7.35V24h-5v-7.9c0-1.9-.04-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V24H7.5V8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-member">
+        <img src="C:\Users\user\datavangaurd\logos\Learn online Logos.jpg" alt="Jude">
+      <div class="member-name">Jude Agyeman</div>
+      <div class="member-role">Data Analyst & Tableau Expert</div>
+      <div class="portfolio">
+        Experienced in creating insightful Tableau dashboards and visualizations that simplify complex data for effective decision-making.
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/alex-mwangi" target="_blank" aria-label="Alex LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.5h.1c.65-1.1 2.25-2.25 4.6-2.25 4.9 0 5.8 3.2 5.8 7.35V24h-5v-7.9c0-1.9-.04-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V24H7.5V8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-member">
+        <img src="C:\Users\user\datavangaurd\logos\Learn online Logos.jpg" alt="Nana">
+      <div class="member-name">Nana Serwaa</div>
+      <div class="member-role">Power BI Specialist and data Analyst</div>
+      <div class="portfolio">
+        Expert in transforming data into impactful Power BI reports using DAX and data modeling to support strategic business insights.
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sophia-kimani" target="_blank" aria-label="Sophia LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.5h.1c.65-1.1 2.25-2.25 4.6-2.25 4.9 0 5.8 3.2 5.8 7.35V24h-5v-7.9c0-1.9-.04-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V24H7.5V8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-member">
+        <img src="C:\Users\user\datavangaurd\logos\Learn online Logos.jpg" alt="Fred">
+      <div class="member-name">Fredrick Madara</div>
+      <div class="member-role">Power BI Specialist and BI Trainer</div>
+      <div class="portfolio">
+        Skilled in building advanced Power BI dashboards and delivering clear, engaging training to help users make data-driven decisions confidently.
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sophia-kimani" target="_blank" aria-label="Sophia LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.5h.1c.65-1.1 2.25-2.25 4.6-2.25 4.9 0 5.8 3.2 5.8 7.35V24h-5v-7.9c0-1.9-.04-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V24H7.5V8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="team-member">
+        <img src="C:\Users\user\datavangaurd\logos\Learn online Logos.jpg" alt="Jem">
+      <div class="member-name">Jemimah Aura</div>
+      <div class="member-role">Secretary DataVanguard </div>
+      <div class="portfolio">
+        Organized and efficient administrative professional supporting daily operations and communications to ensure smooth workflow at DataVanguard.
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sophia-kimani" target="_blank" aria-label="Sophia LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.7v2.5h.1c.65-1.1 2.25-2.25 4.6-2.25 4.9 0 5.8 3.2 5.8 7.35V24h-5v-7.9c0-1.9-.04-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.2V24H7.5V8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    
+
+  </div>
+
+   <footer>
+    <div class="column">
+      <h4>Explore</h4>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Pricing</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Refund Policy</a>
+      <a href="#">Company</a>
+    </div>
+    <div class="column">
+      <h4>Follow Us</h4>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i> X</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <div class="column">
+      <h4>Get In Touch</h4>
+      <p>Email: robertetemesi@gmail.com</p>
+      <p>Phone: +254702498837</p>
+    </div>
+    <div class="column">
+      <h4>Address</h4>
+      <p>Address Code: 00100 Nairobi</p>
+      <div class="progress-bar">
+        <div class="progress-bar-inner">Gain All</div>
+      </div>
+      <p>Slogan: We train you earn</p>
+    </div>
+    <div style="width: 100%; text-align: left; margin-top: 1rem;">
+      &copy; 2025 Data Vanguard Service LLC| All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
