@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookie Policy | DataVanguard Services LLC</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="/logos/android-chrome-512x512.png" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 20px;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      padding: 30px;
+    }
+    h1, h2 {
+      color: #0c2d57;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+    <!--navigations start-->
+    <style>
+         nav {
+      background-color: #a5a2a2;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: gray;
+    }
+    .icon-btn {
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: black;
+    }
+    .icon-btn:hover {
+      color: gray;
+    }
+    .call-button, .whatsapp-button {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-btn, .signin-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      border: 1px solid gray;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-btn {
+      background: gray;
+      color: white;
+    }
+    .contact-btn:hover {
+      background: #555;
+    }
+    .signin-btn {
+      background: white;
+      color: black;
+    }
+    .signin-btn:hover {
+      background: #eee;
+    }
+   
+    </style>
+
+    <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function submitGoogleForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+      const queryString = new URLSearchParams(data).toString();
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSc2B_GcVh7GywveHbuLRfbQOVeyW67hpOWo-SQFf0BS55v9zg/viewform?usp=sharing&ouid=106996248766874390907", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: queryString
+      });
+
+      form.reset();
+      document.getElementById("success-message").style.display = "block";
+    }
+    function downloadPDF() {
+      const element = document.body.cloneNode(true);
+      const win = window.open('', '', 'height=800,width=1000');
+      win.document.write('<html><head><title>Contact Page</title></head><body>');
+      win.document.write(element.innerHTML);
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchBtn = document.querySelector(".icon-btn");
+      searchBtn.addEventListener("click", function() {
+        const query = prompt("Search this site:");
+        if (query) window.find(query);
+      });
+
+      document.querySelector(".contact-btn").addEventListener("click", function() {
+        window.location.href = "https://datavanguardbi.com/Contacts/contacts.html";
+      });
+
+      document.querySelector(".signin-btn").addEventListener("click", function() {
+        window.location.href = "https://datavanguardbi.com/signup/sign_in.html";
+      });
+    });
+  </script>
+    <nav>
+    <div class="nav-logo">
+  <a href="https://datavanguardbi.com/">
+    <img src="datavangaurd/logos/LOGO 4.png" alt="Company Logo">
+  </a>
+</div>
+
+    <div class="nav-links">
+      <a href="https://datavanguardbi.com/">Home</a>
+      <a href="https://datavanguardbi.com/courses/courses.html">Courses</a>
+      <a href="https://datavanguardbi.com/Services/services.html">Services</a>
+      <a href="https://datavanguardbi.com/land.html">Class Layout</a>
+      <a href="https://datavanguardbi.com/Team.html">Team</a>
+      <a href="https://datavanguardbi.com/pricing_dtv.html">Pricing</a>
+      <a href="#">Company</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="register.html">Register</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn"><i class="fas fa-search"></i></button>
+      <a href="tel:+254702498837" class="call-button"><i class="fas fa-phone"></i> Call</a>
+      <a href="https://wa.me/254702498837" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="contact-btn">Contact Us</button>
+      <button class="signin-btn">Sign In</button>
+    </div>
+  </nav>
+  <!--navigations End-->
+  <div class="container">
+    <h1>Cookie Policy</h1>
+    <p>Effective Date: June 23, 2025</p>
+
+    <p>
+      This Cookie Policy explains how DataVanguard Services LLC ("we", "our", or "us") uses cookies and similar technologies when you visit our website (<a href="https://datavanguardbi.com/" target="_blank">https://datavanguardbi.com</a>).
+    </p>
+
+    <h2>1. What are cookies?</h2>
+    <p>
+      Cookies are small text files placed on your device when you visit a website. They help us recognize your device, enhance your experience, and gather usage data.
+    </p>
+
+    <h2>2. Types of cookies we use</h2>
+    <ul>
+      <li><strong>Essential Cookies:</strong> Required for website functionality (e.g., session management, form submissions).</li>
+      <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our site using analytics (e.g., Google Analytics).</li>
+      <li><strong>Functional Cookies:</strong> Remember choices and preferences (e.g., language, region).</li>
+      <li><strong>Advertising Cookies:</strong> Used to deliver personalized ads and track ad performance (e.g., Facebook Pixel, Google Ads).</li>
+    </ul>
+
+    <h2>3. How we use cookies</h2>
+    <p>
+      We use cookies to:
+    </p>
+    <ul>
+      <li>Keep our site secure and functional</li>
+      <li>Improve performance and loading speed</li>
+      <li>Analyze visitor behavior and usage patterns</li>
+      <li>Deliver relevant ads based on browsing history</li>
+    </ul>
+
+    <h2>4. Third-party cookies</h2>
+    <p>
+      Some cookies may be set by third-party services integrated into our site, such as:
+    </p>
+    <ul>
+      <li>Google Analytics</li>
+      <li>Facebook Ads</li>
+      <li>YouTube (embedded videos)</li>
+    </ul>
+
+    <h2>5. Your choices</h2>
+    <p>
+      You can manage or disable cookies in your browser settings. Note that blocking cookies may impact your experience.
+    </p>
+    <ul>
+      <li><a href="https://support.google.com/accounts/answer/61416" target="_blank">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" target="_blank">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/en-us/HT201265" target="_blank">Safari</a></li>
+      <li><a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank">Internet Explorer</a></li>
+    </ul>
+
+    <h2>6. Consent</h2>
+    <p>
+      By using our website, you consent to the use of cookies as described in this policy. If you do not agree, you should disable cookies or stop using the site.
+    </p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>
+      We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated "Effective Date".
+    </p>
+
+    <h2>8. Contact us</h2>
+    <p>
+      If you have any questions, contact us at: <a href="mailto:robertetemesi@gmail.con">info@datavanguard.com</a>
+    </p>
+  </div>
+</body>
+<footer>
+    <style>
+         footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .column {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 0.25rem 0;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .progress-bar {
+      background: #666;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin: 0.5rem 0;
+    }
+    .progress-bar-inner {
+      width: 99%;
+      background: #0f0;
+      text-align: center;
+      color: #000;
+      line-height: 20px;
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links, .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+    }
+    </style>
+    <div class="column">
+      <h4>Explore</h4>
+      <a href="https://datavanguardbi.com/">Home</a>
+      <a href="https://datavanguardbi.com/courses/courses.html">Courses</a>
+      <a href="https://datavanguardbi.com/pricing_dtv.html">Pricing</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Refund Policy</a>
+      
+    </div>
+    <div class="column">
+      <h4>Follow Us</h4>
+      <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i> X</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <div class="column">
+      <h4>Get In Touch</h4>
+      <p>Email: robertetemesi@gmail.com</p>
+      <p>Phone: +254702498837</p>
+    </div>
+    <div class="column">
+      <h4>Address</h4>
+      <p>Address Code: 00100 Nairobi</p>
+      <div class="progress-bar">
+        <div class="progress-bar-inner">Gain All</div>
+      </div>
+      <p>Slogan: We train you earn</p>
+    </div>
+    <div style="width: 100%; text-align: left; margin-top: 1rem;">
+      &copy; 2025 Data Vanguard Service LLC| All rights reserved.
+    </div>
+  </footer>
+</html>
