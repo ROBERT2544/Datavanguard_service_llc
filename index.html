@@ -17,6 +17,17 @@ body {
 }
 
 /* Styles for the navigation bar */
+ nav {
+      background-color: #a5a2a2;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 .navbar {
     display: flex; /* Flexbox for layout */
     justify-content: space-between; /* Space between logo and links */
@@ -42,6 +53,10 @@ body {
     gap: 20px; /* Space between links */
     margin: 0; /* Removes default margin */
     padding: 0; /* Removes default padding */
+    
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
 }
 
 /* Individual list items */
@@ -583,6 +598,7 @@ body {
     gap: 30px;
     margin-bottom: 30px;
     background-color: #333;
+    flex: 1;
     /*height: 100%;*/
     
   }
@@ -718,71 +734,175 @@ body {
   background-color: #009acd;
 }
 /*cookie end*/
+
+@media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links, .nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+    }
     </style>
     <!--navigation section-->
-    <nav class="navbar">
-        <div class="logo">DataVanguard</div>
-        <ul class="nav-links">
-            <li><a href="#Home">Home</a></li>
+    <!--navigations start-->
+    <style>
+         nav {
+      background-color: #a5a2a2;
+      color: black;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: gray;
+    }
+    .icon-btn {
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: black;
+    }
+    .icon-btn:hover {
+      color: gray;
+    }
+    .call-button, .whatsapp-button {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-btn, .signin-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      border: 1px solid gray;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-btn {
+      background: gray;
+      color: white;
+    }
+    .contact-btn:hover {
+      background: #555;
+    }
+    .signin-btn {
+      background: white;
+      color: black;
+    }
+    .signin-btn:hover {
+      background: #eee;
+    }
+   
+    </style>
 
-            <li><a href="courses/courses.html">Courses</a></li>
-            <li><a href="Services/services.html">Services</a></li>
-            <li><a href="land.html">Class Layout</a></li>
-            <li><a href="pricing_dtv.html">Pricing</a></li>
-            <li><a href="Team.html">Team</a></li>
-            <li class="dropdown">
-                <a href="#company">Company <i class="fa fa-caret-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#success-stories">Success Stories</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                </ul>
-            </li>
-            <li><a href="https://robert2544.github.io/Datavanguard_service_llc/Contacts/contacts.html">Contact us</a></li>
-            <li><a href="https://robert2544.github.io/Datavanguard_service_llc/signup/sign_in.html">Register</a></li>
-        </ul>
-        <div class="nav-actions">
-            <div class="search-container">
-                <div class="search-icon">
-                    <i class="fa fa-search"></i>
-                </div>
-                <input type="text" class="search-input" placeholder="Search..." />
-            </div>
-            <div class="phone-number">
-                <i class="fa fa-phone"></i> +254 702498837
-            </div>
-            <!-- HTML -->
-<button class="custom-contact-btn">
-  <a href="https://robert2544.github.io/Datavanguard_service_llc/Contacts/contacts.html">Contact Us</a>
-</button>
+    <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    function submitGoogleForm(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = new FormData(form);
+      const queryString = new URLSearchParams(data).toString();
 
-<!-- Scoped CSS -->
-<style>
-  .custom-contact-btn {
-    background-color: grey;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSc2B_GcVh7GywveHbuLRfbQOVeyW67hpOWo-SQFf0BS55v9zg/viewform?usp=sharing&ouid=106996248766874390907", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: queryString
+      });
 
-  .custom-contact-btn a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-  }
+      form.reset();
+      document.getElementById("success-message").style.display = "block";
+    }
+    function downloadPDF() {
+      const element = document.body.cloneNode(true);
+      const win = window.open('', '', 'height=800,width=1000');
+      win.document.write('<html><head><title>Contact Page</title></head><body>');
+      win.document.write(element.innerHTML);
+      win.document.write('</body></html>');
+      win.document.close();
+      win.print();
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchBtn = document.querySelector(".icon-btn");
+      searchBtn.addEventListener("click", function() {
+        const query = prompt("Search this site:");
+        if (query) window.find(query);
+      });
 
-  .custom-contact-btn a:hover {
-    text-decoration: none;
-  }
-</style>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+      document.querySelector(".contact-btn").addEventListener("click", function() {
+        window.location.href = "https://datavanguardbi.com/Contacts/contacts.html";
+      });
+
+      document.querySelector(".signin-btn").addEventListener("click", function() {
+        window.location.href = "https://datavanguardbi.com/signup/sign_in.html";
+      });
+    });
+  </script>
+    <nav>
+    <div class="nav-logo">
+  <a href="https://datavanguardbi.com/">
+    <img src="datavangaurd/logos/LOGO 4.png" alt="Company Logo">
+  </a>
+</div>
+
+    <div class="nav-links">
+      <a href="https://datavanguardbi.com/">Home</a>
+      <a href="https://datavanguardbi.com/courses/courses.html">Courses</a>
+      <a href="https://datavanguardbi.com/Services/services.html">Services</a>
+      <a href="https://datavanguardbi.com/land.html">Class Layout</a>
+      <a href="https://datavanguardbi.com/Team.html">Team</a>
+      <a href="https://datavanguardbi.com/pricing_dtv.html">Pricing</a>
+      <a href="#">Company</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="register.html">Register</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn"><i class="fas fa-search"></i></button>
+      <a href="tel:+254702498837" class="call-button"><i class="fas fa-phone"></i> Call</a>
+      <a href="https://wa.me/254702498837" class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="contact-btn">Contact Us</button>
+      <button class="signin-btn">Sign In</button>
+    </div>
+  </nav>
 <!-- earch icon functionality -->
 <script>
     // Select the search icon and input field
