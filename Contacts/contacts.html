@@ -299,6 +299,7 @@
   <div class="container">
     <div class="form-section">
       <h2>Contact Us</h2>
+      <!--
       <form onsubmit="submitGoogleForm(event)">
         <label for="name">Name *</label>
         <input type="text" id="name" name="entry.123456" required>
@@ -322,6 +323,21 @@
           <button type="submit">Submit</button>
         </div>
       </form>
+      -->
+      <form action="https://formsubmit.co/robertetemesi@gmail.com" method="POST">
+  <input type="text" name="Name" required>
+  <input type="tel" name="Phone" required>
+  <input type="email" name="Email" required>
+  <input type="text" name="Country" required>
+  <input type="text" name="Subject" required>
+  <textarea name="Question" rows="4" required></textarea>
+
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://datavanguardbi.com/thank-you.html">
+
+  <button type="submit">Submit</button>
+</form>
+
       <div id="success-message" class="success-message">
         Thank you! Your question has been submitted successfully.
       </div>
