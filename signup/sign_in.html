@@ -1016,7 +1016,14 @@
       info: document.getElementById('info').value.trim()
     };
 
-    
+     try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzHWeRL3vyGxY5YajFWwO-DxoqD05-2TPWaLSvZGnbNjc3HZJ1b1EMkWVuMtBJvHgNn/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
       const result = await response.json();
 
       if (result.result === "success") {
