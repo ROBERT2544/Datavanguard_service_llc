@@ -680,6 +680,74 @@
       .info-box .inf{
         color: #0b0c0c;
       }
+
+    /*box seting*/
+    /* Multi-select dropdown styles */
+    .multiselect {
+      position: relative;
+    }
+
+    .selectBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .selectBox span {
+      flex-grow: 1;
+      color: #333;
+    }
+
+    .arrow {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    #checkboxes {
+      display: none;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      background-color: white;
+      z-index: 1;
+      width: 100%;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .multiselect.open #checkboxes {
+      display: block;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: normal;
+    }
+
+    .checkbox-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      margin-left: 10px;
+    }
         </style>
         <!--navigation section-->
         <nav class="navbar">
@@ -870,7 +938,26 @@
     <label for="address">Address *</label>
     <textarea name="address" id="address" rows="3" required></textarea>
 
-    <!-- Course Selection -->
+    <label>Select Courses</label>
+    <div class="multiselect" id="multiselect">
+      <div class="selectBox" onclick="toggleCheckboxes()">
+        <span id="selected-courses">Select Courses</span>
+        <div class="arrow">▼</div>
+      </div>
+      <div id="checkboxes">
+        <div class="checkbox-grid">
+          <label class="checkbox-item">Tableau <input type="checkbox" name="courses" value="Tableau"></label>
+          <label class="checkbox-item">SQL <input type="checkbox" name="courses" value="SQL"></label>
+          <label class="checkbox-item">Alteryx <input type="checkbox" name="courses" value="ALTERYX"></label>
+          <label class="checkbox-item">POWER BI <input type="checkbox" name="courses" value="POWER BI"></label>
+          <label class="checkbox-item">Python For DataAnalysis <input type="checkbox" name="courses" value="PYTHON For DataAnalysis"></label>
+          <label class="checkbox-item">Excel <input type="checkbox" name="courses" value="EXCEL"></label>
+          <label class="checkbox-item">Looker <input type="checkbox" name="courses" value="LOOKER"></label>
+          <label class="checkbox-item">Qlik <input type="checkbox" name="courses" value="QLIK"></label>
+        </div>
+      </div>
+    </div>
+    <!-- Course Selection 
     <label for="courses">Select Course(s) *</label>
     <select name="courses" id="courses" multiple size="5" required>
       <option value="Power BI">Power BI</option>
@@ -882,7 +969,68 @@
       <option value="QlikView/QlikSense">QlikView/QlikSense</option>
       <option value="PostgressSQL">PostgressSQL</option>
     </select>
+      --->
+    <script>
+  function toggleCheckboxes() {
+    const multiselect = document.getElementById("multiselect");
+    multiselect.classList.toggle("open");
+  }
 
+  document.addEventListener('click', function (event) {
+    const multiselect = document.getElementById("multiselect");
+    if (!multiselect.contains(event.target)) {
+      multiselect.classList.remove("open");
+    }
+  });
+
+  // Update selected courses text
+  const checkboxes = document.querySelectorAll('input[name="courses"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateSelectedText);
+  });
+
+  function updateSelectedText() {
+    const selected = [...document.querySelectorAll('input[name="courses"]:checked')]
+      .map(c => c.value);
+    const display = document.getElementById('selected-courses');
+    display.textContent = selected.length ? selected.join(', ') : "Select Courses";
+  }
+
+  const form = document.getElementById('registration-form');
+  const successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const selectedCourses = [...document.querySelectorAll('input[name="courses"]:checked')]
+      .map(checkbox => checkbox.value).join(', ');
+
+    const data = {
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      gender: document.getElementById('gender').value,
+      country: document.getElementById('country').value.trim(),
+      city: document.getElementById('city').value.trim(),
+      courses: selectedCourses,
+      info: document.getElementById('info').value.trim()
+    };
+
+    
+      const result = await response.json();
+
+      if (result.result === "success") {
+        successMsg.style.display = "block";
+        form.reset();
+        updateSelectedText(); // Reset label
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
+  });
+</script>
     <!-- Additional Notes -->
     <label for="more">Any additional information?</label>
     <textarea name="more" id="more" rows="3"></textarea>
