@@ -521,7 +521,12 @@
       <p>Slogan: We train you earn</p>
     </div>
     <div style="width: 100%; text-align: left; margin-top: 1rem;">
-      &copy; 2025 Data Vanguard Service LLC| All rights reserved.
+  &copy; <span id="year"></span> Data Vanguard Service LLC | All rights reserved.
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     </div>
   </footer>
 </body>
