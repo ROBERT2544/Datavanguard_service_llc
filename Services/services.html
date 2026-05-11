@@ -890,6 +890,13 @@ section .background_im .main_container{
   
     <div class="footer-bottom">
       <p>Copyright ©DataVanguard Service LLC</p>
+        <div style="width: 100%; text-align: left; margin-top: 1rem;">
+  &copy; <span id="year"></span> Data Vanguard Service LLC | All rights reserved.
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     </div>
   </footer>
   <script>
